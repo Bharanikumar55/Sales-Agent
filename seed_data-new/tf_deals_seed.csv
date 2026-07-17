@@ -1,0 +1,51 @@
+deal_name,account_name,deal_value,deal_stage,close_date,probability,contact_name,vertical,horizontal,engagement_model,opportunity_stage,ai_influenced,business_type,lead_source,salesperson,industry,geography
+Cloud Migration - Wells Fargo,Wells Fargo,2500000,Closed Won,2025-01-15,100,Sarah Mitchell,Mortgage & Lending,Application Engineering,T&M,P0,yes,New Business,Referral,Amit Shah,Financial Services,Onshore
+AI Data Platform - HDFC,HDFC Bank,1800000,Negotiation,2025-06-30,75,Rajesh Kumar,Banking & Insurance,AI & Data,Outcome-based,P3,yes,New Business,Inbound,Priya Desai,Financial Services,Offshore
+Digital Ops Transformation - JPMorgan,JPMorgan Chase,4200000,Proposal,2025-07-15,60,Michael Chen,Capital Market,Digital Operations,Fixed,P4,no,Existing Customer,Account Mining,David Wilson,Financial Services,Onshore
+Mortgage Platform Modernization - Fannie Mae,Fannie Mae,3100000,Closed Won,2024-11-20,100,Jennifer Adams,Mortgage & Lending,Application Engineering,Fixed,P0,yes,Existing Customer,Referral,Amit Shah,Financial Services,Onshore
+Student Portal Redesign - ASU,Arizona State University,850000,Discovery,2025-09-01,30,Dr. Robert Lee,Higher Education,Application Engineering,T&M,P6,no,New Business,Conference,Sarah Johnson,Education,Onshore
+AI Chatbot - Citibank,Citibank,1200000,Closed Won,2025-02-28,100,Amanda Foster,Banking & Insurance,AI & Data,Outcome-based,P0,yes,New Business,Inbound,Priya Desai,Financial Services,Onshore
+Payment Gateway Upgrade - Stripe,Stripe,1600000,Negotiation,2025-08-15,70,Kevin Park,Payments,Application Engineering,T&M,P3,no,Existing Customer,Account Mining,David Wilson,Technology,Onshore
+Risk Analytics Engine - Goldman Sachs,Goldman Sachs,3800000,Proposal,2025-07-30,55,Lisa Wang,Capital Market,AI & Data,Outcome-based,P4,yes,New Business,Referral,Amit Shah,Financial Services,Onshore
+Data Warehouse Migration - ICICI,ICICI Bank,1400000,Discovery,2025-10-15,25,Suresh Patel,Banking & Insurance,AI & Data,T&M,P7,no,New Business,Cold Outreach,Ravi Verma,Financial Services,Offshore
+Campus Analytics - MIT,Massachusetts Institute of Technology,920000,Closed Won,2025-03-10,100,Prof. James Miller,Higher Education,AI & Data,Fixed,P0,yes,New Business,Conference,Sarah Johnson,Education,Onshore
+Lending Platform API - Quicken Loans,Quicken Loans,2100000,Closed Won,2024-12-05,100,Tom Harris,Mortgage & Lending,Application Engineering,T&M,P0,no,Existing Customer,Account Mining,Amit Shah,Financial Services,Onshore
+Fraud Detection System - PayPal,PayPal,2800000,Negotiation,2025-06-15,80,Maria Rodriguez,Payments,AI & Data,Outcome-based,P2,yes,New Business,Inbound,Priya Desai,Technology,Onshore
+Digital Onboarding - Bank of America,Bank of America,1950000,Proposal,2025-08-30,50,Chris Thompson,Banking & Insurance,Digital Operations,Fixed,P5,no,Existing Customer,Referral,David Wilson,Financial Services,Onshore
+Enrollment System Modernization - UCLA,UCLA,750000,Negotiation,2025-07-01,65,Dr. Emily Chang,Higher Education,Application Engineering,T&M,P3,no,New Business,Conference,Sarah Johnson,Education,Onshore
+Trading Platform - Morgan Stanley,Morgan Stanley,5100000,Discovery,2025-11-30,20,Daniel Brooks,Capital Market,Application Engineering,T&M,P8,no,New Business,Cold Outreach,Amit Shah,Financial Services,Onshore
+AI Underwriting - LoanDepot,LoanDepot,1300000,Closed Won,2025-04-20,100,Nicole Green,Mortgage & Lending,AI & Data,Outcome-based,P0,yes,New Business,Inbound,Priya Desai,Financial Services,Onshore
+DevOps Pipeline - Mastercard,Mastercard,1750000,Closed Won,2025-01-30,100,Brian Martinez,Payments,Digital Operations,Retainers,P0,no,Existing Customer,Account Mining,Ravi Verma,Technology,Both
+Wealth Management App - Charles Schwab,Charles Schwab,2200000,Proposal,2025-09-15,45,Patricia White,Capital Market,Application Engineering,Fixed,P5,no,New Business,Referral,David Wilson,Financial Services,Onshore
+Student Success Platform - Purdue,Purdue University,680000,Closed Won,2025-05-10,100,Dr. Mark Taylor,Higher Education,AI & Data,T&M,P0,yes,New Business,Conference,Sarah Johnson,Education,Onshore
+Insurance Claims AI - Allstate,Allstate,2400000,Negotiation,2025-07-20,72,Karen Davis,Banking & Insurance,AI & Data,Outcome-based,P3,yes,New Business,Inbound,Priya Desai,Financial Services,Onshore
+Core Banking Modernization - SBI,State Bank of India,3500000,Discovery,2025-12-01,15,Anil Kapoor,Banking & Insurance,Application Engineering,T&M,P9,no,New Business,Cold Outreach,Ravi Verma,Financial Services,Offshore
+Real-time Payments - Visa,Visa,4000000,Proposal,2025-08-01,55,Jessica Lee,Payments,Application Engineering,Fixed,P4,no,Existing Customer,Account Mining,Amit Shah,Technology,Onshore
+Compliance Dashboard - Deutsche Bank,Deutsche Bank,1650000,Negotiation,2025-06-25,68,Hans Mueller,Capital Market,Digital Operations,Retainers,P3,no,Existing Customer,Referral,David Wilson,Financial Services,Both
+LMS Integration - Stanford,Stanford University,1100000,Proposal,2025-09-30,40,Prof. Susan Clark,Higher Education,Digital Operations,T&M,P5,no,New Business,Conference,Sarah Johnson,Education,Onshore
+Mortgage Document AI - US Bank,US Bank,1850000,Closed Won,2025-03-25,100,Ryan Johnson,Mortgage & Lending,AI & Data,Outcome-based,P0,yes,Existing Customer,Account Mining,Amit Shah,Financial Services,Onshore
+Predictive Lending - Rocket Mortgage,Rocket Mortgage,2300000,Negotiation,2025-07-10,70,Laura Smith,Mortgage & Lending,AI & Data,Outcome-based,P2,yes,New Business,Inbound,Priya Desai,Financial Services,Onshore
+API Gateway - Square,Square,1450000,Closed Won,2025-02-15,100,Derek Brown,Payments,Application Engineering,T&M,P0,no,New Business,Referral,Ravi Verma,Technology,Onshore
+Portfolio Risk Dashboard - Blackrock,Blackrock,3200000,Proposal,2025-10-01,50,Andrew Kim,Capital Market,AI & Data,Fixed,P4,yes,New Business,Conference,Amit Shah,Financial Services,Onshore
+IT Operations Automation - Infosys,Infosys,900000,Closed Won,2025-04-05,100,Vikram Singh,Technology,Digital Operations,Retainers,P0,no,Renewal,Account Mining,Ravi Verma,Technology,Offshore
+Alumni Engagement Platform - Harvard,Harvard University,1250000,Discovery,2025-11-15,20,Dr. Catherine Moore,Higher Education,Application Engineering,Fixed,P7,no,New Business,Cold Outreach,Sarah Johnson,Education,Onshore
+KYC Automation - HSBC,HSBC,2700000,Negotiation,2025-06-20,75,Oliver Wright,Banking & Insurance,AI & Data,Outcome-based,P2,yes,Existing Customer,Account Mining,Priya Desai,Financial Services,Both
+Loan Origination System - PNC,PNC Financial,1900000,Proposal,2025-08-20,45,Michelle Davis,Mortgage & Lending,Application Engineering,T&M,P5,no,New Business,Inbound,David Wilson,Financial Services,Onshore
+Mobile Banking App - Kotak,Kotak Mahindra Bank,1150000,Discovery,2025-10-30,30,Neha Sharma,Banking & Insurance,Application Engineering,T&M,P6,no,New Business,Cold Outreach,Ravi Verma,Financial Services,Offshore
+Crypto Trading Engine - Coinbase,Coinbase,2600000,Proposal,2025-09-01,50,Tyler Anderson,Capital Market,Application Engineering,Fixed,P4,no,New Business,Inbound,Amit Shah,Technology,Onshore
+Research Data Platform - Yale,Yale University,780000,Negotiation,2025-07-25,60,Prof. David Evans,Higher Education,AI & Data,T&M,P3,yes,New Business,Conference,Sarah Johnson,Education,Onshore
+Payment Fraud AI - Adyen,Adyen,2050000,Closed Won,2025-05-15,100,Sophie van Berg,Payments,AI & Data,Outcome-based,P0,yes,New Business,Referral,Priya Desai,Technology,Both
+Cloud Infrastructure - TCS,TCS,1350000,Closed Won,2025-02-20,100,Ramesh Gupta,Technology,Digital Operations,T&M,P0,no,Renewal,Account Mining,Ravi Verma,Technology,Offshore
+Derivatives Analytics - Citadel,Citadel,4500000,Discovery,2025-12-15,15,Robert Harrison,Capital Market,AI & Data,Fixed,P9,yes,New Business,Cold Outreach,Amit Shah,Financial Services,Onshore
+Insurance Renewals Platform - MetLife,MetLife,1700000,Negotiation,2025-07-05,72,Sandra Collins,Banking & Insurance,Digital Operations,Retainers,P3,no,Existing Customer,Account Mining,David Wilson,Financial Services,Onshore
+Admissions Analytics - Columbia,Columbia University,650000,Proposal,2025-08-10,40,Dr. Helen Park,Higher Education,AI & Data,Fixed,P5,yes,New Business,Conference,Sarah Johnson,Education,Onshore
+Cross-border Payments - Ripple,Ripple,3000000,Proposal,2025-09-20,55,James Wilson,Payments,Application Engineering,Outcome-based,P4,yes,New Business,Inbound,Amit Shah,Technology,Onshore
+Servicing Platform Upgrade - Mr Cooper,Mr Cooper,1550000,Closed Won,2025-04-30,100,Angela Torres,Mortgage & Lending,Application Engineering,T&M,P0,no,Existing Customer,Account Mining,David Wilson,Financial Services,Onshore
+Regulatory Reporting - BNY Mellon,BNY Mellon,2350000,Negotiation,2025-06-10,78,Stephen Lewis,Capital Market,Digital Operations,Fixed,P2,no,Existing Customer,Referral,David Wilson,Financial Services,Onshore
+Data Lake Migration - Wipro,Wipro,800000,Closed Won,2025-03-15,100,Anita Joshi,Technology,AI & Data,T&M,P0,yes,Renewal,Account Mining,Ravi Verma,Technology,Offshore
+Financial Aid System - UPenn,University of Pennsylvania,880000,Discovery,2025-11-01,25,Dr. Michael Ross,Higher Education,Application Engineering,T&M,P7,no,New Business,Conference,Sarah Johnson,Education,Onshore
+Open Banking API - Plaid,Plaid,1800000,Closed Won,2025-05-20,100,Emily Zhang,Payments,Application Engineering,T&M,P0,yes,New Business,Inbound,Priya Desai,Technology,Onshore
+Credit Scoring AI - Experian,Experian,2150000,Proposal,2025-08-25,50,Mark Robinson,Banking & Insurance,AI & Data,Outcome-based,P4,yes,New Business,Referral,Priya Desai,Financial Services,Onshore
+Market Data Platform - Bloomberg,Bloomberg,3700000,Discovery,2025-12-30,10,Rachel Kim,Capital Market,AI & Data,Fixed,P10,no,New Business,Cold Outreach,Amit Shah,Technology,Onshore
+Ops Dashboard - Accenture,Accenture,1050000,Closed Won,2025-01-25,100,Paul Murphy,Technology,Digital Operations,Retainers,P0,no,Renewal,Account Mining,Ravi Verma,Technology,Both
+Home Equity Digital - Freedom Mortgage,Freedom Mortgage,1400000,Negotiation,2025-07-15,65,Crystal Howard,Mortgage & Lending,Digital Operations,T&M,P3,no,New Business,Inbound,David Wilson,Financial Services,Onshore

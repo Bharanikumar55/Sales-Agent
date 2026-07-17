@@ -1,0 +1,16 @@
+{
+  "dim_account": {
+    "account_name": "account_name"
+  },
+  "fact_transactions": {
+    "transaction_type": "transaction_type",
+    "transaction_date": "transaction_date",
+    "amount": "amount",
+    "quantity": "quantity",
+    "currency": "currency",
+    "status": "status",
+    "reference_id": "invoice_number",
+    "account_name": "account_name",
+    "product_name": "product_name"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "dim_contact": {
+    "contact_name": "employee_name",
+    "email": "employee_email",
+    "phone": "employee_phone",
+    "title": "title",
+    "department": "department"
+  },
+  "dim_department": {
+    "name": "department",
+    "head": "manager",
+    "location": "location"
+  },
+  "fact_hr_records": {
+    "record_type": "record_type",
+    "record_date": "hire_date",
+    "employee_name": "employee_name",
+    "department": "department",
+    "position": "title",
+    "salary": "salary",
+    "status": "status",
+    "manager": "manager"
+  }
+}

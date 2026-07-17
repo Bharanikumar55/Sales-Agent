@@ -1,0 +1,15 @@
+Market Intel: Tyrell Corp Expansion
+Date: 2024-04-12
+Source: Internal Analyst Report
+
+We've received intel that Tyrell Corp is planning a massive shift in their product line toward 'Bio-Synthetics'. 
+
+Crucially, they are moving away from their current robotics focuses in the Los Angeles sector and opening a new major hub in Tokyo, Japan. 
+
+They have a high buying intent for 'Genetic Modeling Software' and have already allocated a budget of $15,000,000 for this.
+
+Competition: Weyland-Yutani is also bidding for this, so we need to move fast.
+Sentiment: Neutral (High Competitive Pressure).
+Account Name: Tyrell Corp
+Industry: Robotics / Bio-Synthetics
+Geography: Tokyo, Japan (New Hub)

@@ -1,0 +1,119 @@
+# Simulation Guide: Real-World Ingestion & AI Evolution
+
+This guide helps you simulate a maturing data pipeline in your Semantic Layer.
+
+## Step 1: Baseline Ingestion
+**File:** `simulation/batch_1_standard.csv`
+**What to expect:**
+- Standard mapping of accounts, contacts, and deals.
+- All fields should map deterministically without AI assistance.
+- **Verification:** Check `silver.dim_account` for Acme Corp and GloboLink.
+
+## Step 2: Scale Ingestion
+**File:** `simulation/batch_2_standard.csv`
+**What to expect:**
+- More entities, consistent schema.
+- One deal for **InGen** is marked as `Closed Won`.
+- **Verification:** Check `gold.revenue_summary` to see total won value per account.
+
+## Step 3: Schema Evolution (Simple)
+**File:** `simulation/batch_3_evolution.csv`
+**What to expect:**
+- This file contains a new column: **`lead_source`**.
+- The AI will detect it, classify it into `dim_account`, and add it to the DB.
+- Logs: `🤖 Unknown field 'lead_source' -> asking AI...`
+
+## Step 3b: Dynamic Schema Awareness (Continuation)
+**File:** `simulation/batch_3_continuation.csv`
+**What to expect:**
+- This file has the same **`lead_source`** column from Step 3.
+- **Result:** The system should now recognize `lead_source` as a "known" column because it was already added to the database.
+- **Critical:** You SHOULD NOT see the AI logs again for this field. It should be handled deterministically.
+
+## Step 4: Complex Schema Evolution
+**File:** `simulation/batch_4_complex_evolution.csv`
+**What to expect:**
+- This file introduces **two** new columns: `deal_priority` and `preferred_contact_time`.
+- AI must decide: `deal_priority` -> `fact_deals`, `preferred_contact_time` -> `dim_contact`.
+- **Result:** Multiple tables will evolve simultaneously.
+
+---
+
+## 📄 Unstructured Text Simulation (AI Extraction)
+*These files are not spreadsheets. The AI will read the text and decide what to extract.*
+
+### Step 5: Meeting Notes Extraction
+**File:** `simulation/stark_meeting_notes.txt`
+**What to expect:**
+- The AI will extract the high **positive sentiment**.
+- It will find the **$5,000,000** expansion mentioned in the text.
+- It will link this to the existing **Stark Industries** account.
+
+### Step 6: Email Lead Generation
+**File:** `simulation/umbrella_deal_email.txt`
+**What to expect:**
+- The AI will "invent" a new contact named **Ada Wong** because she was mentioned in the email.
+- It will update the Umbrella Corp deal to **Contracting** and set the value to **$2,500,000**.
+
+### Step 7: Market Intelligence (Merging)
+**File:** `simulation/tyrell_market_intel.txt`
+**What to expect:**
+- The AI will see that **Tyrell Corp** is moving to **Tokyo, Japan**.
+- It will update the `geography` field for Tyrell Corp in `dim_account`.
+- It will create a new high-value **$15,000,000** deal for 'Genetic Modeling Software'.
+
+### Step 8: Strategic Relocation (OsCorp)
+**File:** `simulation/oscorp_market_intel.txt`
+**What to expect:**
+- The AI will see that **OsCorp** is moving its hub to **Gujarat, India**.
+- It will update the `geography` in `dim_account` for OsCorp.
+- It will extract a new **$20,000,000** deal for 'Green Goblin Defense'.
+
+### Step 9: Cloud Migration (Buy More)
+**File:** `simulation/buymore_meeting_notes.txt`
+**What to expect:**
+- The AI will extract the **$1,200,000** 'Global Inventory Cloud' deal.
+- It will set the sentiment to **Positive**.
+- It will identify **Chuck Bartowski** as the contact if he isn't already created.
+
+---
+
+## Sample Queries for Testing (Run in pgAdmin)
+
+### 💿 Silver Layer Query (Raw Entities)
+```sql
+-- See all evolved data in the account dimension
+SELECT account_name, industry, geography, lead_source FROM silver.dim_account ORDER BY created_at DESC;
+
+-- See specific deal details with owner and stage
+SELECT deal_name, account_name, deal_value, deal_stage, owner FROM silver.fact_deals ORDER BY created_at DESC;
+```
+
+### 🥇 Gold Layer Query (Business Answers)
+```sql
+-- Business Question: "Which accounts have the most revenue exposure?"
+SELECT account_name, industry, total_deal_value, won_value, pipeline_value FROM gold.revenue_summary ORDER BY total_deal_value DESC;
+
+-- Business Question: "Show me a 360 view of my top accounts"
+SELECT * FROM gold.account_360 WHERE total_deal_value > 0 ORDER BY total_deal_value DESC;
+```
+
+---
+
+## 💬 Natural Language (Chat) Questions
+*Ask these in the Sales Assistant chat UI to test the AI's logic.*
+
+### Tracking Raw Data (Silver)
+- "Show me everything you have on **Acme Corp**."
+- "What was the sentiment of the last meeting with **Umbrella Corp**?"
+- "Who is the main contact at **Stark Industries**?"
+
+### Business Performance (Gold)
+- "Give me a summary of our **revenue by account**."
+- "Which deals are **closing this year**?"
+- "Which accounts are currently **at risk**?"
+
+### Testing AI Evolution (The New Fields)
+- "Show me all accounts that came from a **Referral** lead source."
+- "Which high priority deals are in the pipeline?"
+- "What is the preferred contact time for **Eldon Tyrell**?"

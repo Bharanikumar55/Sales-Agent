@@ -1,0 +1,50 @@
+{
+  "dim_account": {
+    "account_name": "account_name",
+    "industry": "industry",
+    "geography": "geography",
+    "vertical": "vertical",
+    "annual_revenue": "annual_revenue",
+    "employee_count": "employee_count",
+    "website": "website",
+    "account_type": "account_type",
+    "segment": "segment"
+  },
+  "dim_contact": {
+    "contact_name": "contact_name",
+    "email": "contact_email",
+    "phone": "contact_phone",
+    "title": "contact_title",
+    "role": "contact_role",
+    "account_name": "account_name"
+  },
+  "fact_deals": {
+    "deal_name": "deal_name",
+    "deal_value": "deal_value",
+    "deal_stage": "deal_stage",
+    "close_date": "close_date",
+    "probability": "probability",
+    "currency": "currency",
+    "pipeline": "pipeline",
+    "product_name": "product_name",
+    "account_name": "account_name",
+    "contact_name": "contact_name",
+    "owner": "owner",
+    "vertical": "vertical",
+    "horizontal": "horizontal",
+    "engagement_model": "engagement_model",
+    "opportunity_stage": "opportunity_stage",
+    "ai_influenced": "ai_influenced",
+    "business_type": "business_type",
+    "lead_source": "lead_source",
+    "salesperson": "salesperson"
+  },
+  "fact_interactions": {
+    "interaction_type": "last_interaction_type",
+    "interaction_date": "last_interaction_date",
+    "summary": "last_interaction_summary",
+    "sentiment": "sentiment",
+    "account_name": "account_name",
+    "contact_name": "contact_name"
+  }
+}

@@ -1,0 +1,158 @@
+HCC (Hancock Claims Consultants) - Content Pricing Genie Project
+Meeting Transcript - March 14, 2026
+Duration: 1h 9m 48s
+Meeting Type: Product Discovery & Demo Walkthrough
+
+---
+
+Avinash Dongre   0:25
+I started the transcript. Transcript is good. Let's get going.
+
+Nithasha Tarikere Nama   0:27
+OK, I will share my screen. The QA environment bot should be loading up.
+
+Avinash Dongre   0:43
+Is this HCC's existing tool?
+
+Nithasha Tarikere Nama   0:45
+Yeah, this is the current version of the Content Pricing Genie. It's in the QA environment right now.
+
+Avinash Dongre   0:47
+Got it. This is what we're looking to rebuild and enhance.
+
+Nithasha Tarikere Nama   0:50
+Correct. So let me walk you through what HCC has today and what they need from us.
+
+Avinash Dongre   1:12
+I'll take screenshots page by page as we go. Walk me through each screen one at a time.
+
+Nithasha Tarikere Nama   1:30
+Sure. So the core idea is — HCC wants a platform that handles both insurance claim transcription AND pricing. Some adjusters only need transcription, some only need pricing, and some need both. The system needs to support all three workflows.
+
+Avinash Dongre   2:31
+Makes sense. So it's a modular product — transcription module and pricing module that can be used independently or together.
+
+Nithasha Tarikere Nama   2:34
+Exactly. For the transcription piece, it's straightforward — adjusters upload claim files and the system cleans and extracts the data. The input formats are Excel, Word documents, PDFs, scanned images, and even handwritten scribble notes in Word files.
+
+Avinash Dongre   3:56
+When you say Word, you mean images pasted inside a Word document?
+
+Nithasha Tarikere Nama   3:59
+Yes, images pasted in Word. Also handwritten notes scanned and dropped into Word. Plus they accept standard PDFs, Excel spreadsheets, and direct image uploads. So our OCR and extraction pipeline needs to handle all of these.
+
+Avinash Dongre   4:42
+And the output formats?
+
+Nithasha Tarikere Nama   5:09
+They support two output formats apart from the UI display — ACORD forms and Xactimate ESX files. These are insurance industry standard formats. The transcribed and priced data shows up in the UI first, and then adjusters can download in either format.
+
+Avinash Dongre   5:30
+OK so ACORD and Xactimate — those are the two key output integrations we need to build.
+
+Nithasha Tarikere Nama   6:05
+Right. And the pricing model is configurable per tenant. Everything — tolerance levels, which secondary market websites the bot checks, priority pricing sources — all of that is configurable at the tenant level. And soon they want user-level customization too.
+
+Avinash Dongre   6:23
+Per tenant AND per user level config? That's a significant architecture requirement. How many tenants are we looking at?
+
+Nithasha Tarikere Nama   6:48
+Currently just one tenant — HCC's internal Hancock team. But they're planning to commercialize this product to other insurance carriers. That's why they need SSO, multi-tenancy, and configurable pricing rules. They want to sell this as a SaaS product.
+
+Avinash Dongre   7:02
+So this is not just an internal tool — HCC wants to turn this into a commercial product they sell to other insurance companies. That changes the scope significantly.
+
+Nithasha Tarikere Nama   7:16
+Yes. And they want us to make it production-ready for commercialization. SSO integration, multi-tenant architecture, configurable workflows.
+
+Avinash Dongre   7:51
+Got it. Can you create a simple PPT — one slide per screen — with a brief description of what each screen does? Don't spend too much time beautifying it, just a flow dump.
+
+Nithasha Tarikere Nama   8:11
+OK, got it. So the flow starts with the adjuster uploading claim files into the system. The system reads whatever format comes in — PDF, Excel, Word, images. But the system does NOT validate the business data. It's the carrier's or adjuster's responsibility to upload valid claim files.
+
+Avinash Dongre   9:22
+Let me ask — does HCC need just a UI interface, or do they also want an API so other systems can send files programmatically?
+
+Nithasha Tarikere Nama   10:05
+For now just UI. They're not integrating with any other system yet. But I think once they go commercial, API access will be a Phase 2 requirement.
+
+Avinash Dongre   10:28
+OK. Another question — if an adjuster uploads 20 files for a property claim, do we treat them as one project or 20 independent extractions?
+
+Nithasha Tarikere Nama   11:23
+Each file is independent. Upload one file, get extraction for that file. Upload another, get extraction for that. No grouping or project concept for now.
+
+Avinash Dongre   11:42
+Good, that simplifies the architecture. Each file is a standalone transaction.
+
+Nithasha Tarikere Nama   12:18
+Right. And there's one key assumption — the system relies on the quality of the uploaded claim files. We don't validate whether the items in the claim are actually covered by the insurer's policy. That's out of scope. I've documented this assumption already.
+
+Avinash Dongre   13:46
+Smart. We don't determine policy coverage — we just extract, transcribe, and price what's in the document.
+
+Nithasha Tarikere Nama   14:10
+Exactly. Now let me walk you through the pricing flow. Once the claim items are extracted, the system looks up pricing from multiple sources — primary databases, secondary market websites, and historical claim data. The bot compares prices across sources and applies tolerance checks.
+
+Avinash Dongre   15:30
+What's the tolerance check?
+
+Nithasha Tarikere Nama   15:35
+If the price from Source A differs from Source B by more than the configured tolerance percentage — say 15% — it gets flagged for manual review by the adjuster. Otherwise the system auto-selects the best price.
+
+Avinash Dongre   16:00
+That's a solid workflow. So the AI does the heavy lifting but humans review edge cases. Any competitors we should be aware of? Is anyone else bidding on this?
+
+Nithasha Tarikere Nama   16:20
+I know they've had conversations with Verisk — they have an existing Xactimate relationship. And I heard Cognizant pitched something similar last quarter. But HCC wasn't happy with the turnaround time on either proposal.
+
+Avinash Dongre   16:45
+Good to know. Verisk and Cognizant are in the picture. What's HCC's timeline for going live?
+
+Nithasha Tarikere Nama   17:00
+They want the MVP ready by end of Q2 2026 — so June. The internal team has been using the current tool but it's falling apart. They need a production-grade replacement urgently.
+
+Avinash Dongre   17:30
+June is tight for the full scope — multi-tenancy, SSO, configurable workflows, OCR for 5 input formats, two output integrations. We might need to phase it.
+
+Nithasha Tarikere Nama   17:45
+Agreed. I think Phase 1 should be core transcription + pricing with single tenant. Phase 2 is multi-tenancy and SSO for commercialization.
+
+Avinash Dongre   18:00
+Perfect. I'll put together a phased proposal. Let me also loop in Vikas from our AI team for the OCR and extraction architecture. What's the budget situation — has HCC allocated a number?
+
+Nithasha Tarikere Nama   18:30
+The product owner mentioned $300K to $350K for the full build. They have budget approval already from their VP of Technology.
+
+Avinash Dongre   18:45
+That's workable. I'll target $320K for the full engagement with the phased approach. Let me send a revised SOW by next Wednesday.
+
+Nithasha Tarikere Nama   19:00
+Sounds good. I'll also get you access to the production environment once IT provisions it. And I'll prepare that screen-by-screen PPT by Monday.
+
+Avinash Dongre   19:20
+Great. One last thing — who's the final decision maker on their side? Is it the VP of Technology or someone else?
+
+Nithasha Tarikere Nama   19:30
+The VP of Technology, David Chen, has signing authority up to $500K. So for this deal size he can approve directly without going to the board.
+
+Avinash Dongre   19:45
+Perfect. So David Chen is our decision maker. Can we get a 30-minute call with him once the SOW is ready?
+
+Nithasha Tarikere Nama   19:55
+Yes, I'll set that up. David is usually available on Thursdays.
+
+Avinash Dongre   20:10
+Excellent. Let me summarize the action items:
+1. I'll prepare a phased SOW targeting $320K — due by next Wednesday
+2. Nithasha will create the screen-by-screen PPT by Monday
+3. Nithasha will arrange production environment access
+4. We'll schedule a call with David Chen for SOW review — targeting next Thursday
+5. I'll loop in Vikas for the OCR architecture discussion
+
+Nithasha Tarikere Nama   20:40
+Sounds good. Thanks Avinash, this was very productive.
+
+Avinash Dongre   20:45
+Thanks Nithasha. Talk soon.

@@ -1,0 +1,52 @@
+# Business Logic Guide - Semantic Layer Service
+
+This document explains the business logic used to generate the Gold Layer (Business Intelligence Marts) from the Silver Layer (Canonical Data).
+
+## 1. Top Customers
+**Business Question**: "Who are our most valuable accounts?"
+**Logic**: 
+- Accounts are ranked globally based on their **Total Deal Value** (the sum of all deals, whether Won, Lost, or Open).
+- The ranking uses a `ROW_NUMBER()` over the `total_deal_value` in descending order.
+- **Strictness**: Accounts with missing names are excluded from this calculation.
+
+## 2. Revenue Summary & Pipeline Value
+**Business Question**: "What is our current financial exposure?"
+**Logic**:
+- **Won Value**: Sum of `deal_value` where the `deal_stage` is exactly 'Closed Won'.
+- **Pipeline Value**: Sum of `deal_value` where the `deal_stage` DOES NOT start with 'Closed'. This represents active opportunities.
+- **Average Deal Size**: The mean value of all deals associated with an account.
+- **Strictness**: Only deals with valid numeric `deal_value` strings are summed (invalid strings are treated as 0).
+
+## 3. Pipeline Health (Funnel)
+**Business Question**: "How many deals are in each stage of our sales funnel?"
+**Logic**:
+- Aggregates all deals by their `deal_stage`.
+- Only includes "Active" deals (stages that do not start with 'Closed').
+- **Strictness**: Deals with NULL or empty stages are filtered out to prevent "Unknown" groupings in the UI.
+
+## 4. At-Risk Accounts
+**Business Question**: "Which customers are we losing touch with?"
+**Logic**:
+- **Risk Level Calculation**:
+    - **High**: No recorded interactions OR last contact was > 60 days ago (and they have open deals).
+    - **Medium**: Last contact was between 30 and 60 days ago (and they have open deals).
+    - **Low**: Contacted within the last 30 days.
+- Only accounts with at least one **Open Deal** are considered for risk analysis.
+
+## 5. Account 360
+**Business Question**: "Give me everything we know about this account."
+**Logic**:
+- This is a "Wide Table" join that merges:
+    - Basic info (Industry, Geography, Employees) from `dim_account`.
+    - Engagement metrics from `fact_interactions` (total count, latest sentiment).
+    - Intelligence metrics from `fact_insights` (number of AI-extracted insights).
+    - Performance metrics from `fact_deals` (win rate, pipeline value).
+
+## 6. Activity & Engagement
+**Business Question**: "How engaged are we with our customers?"
+**Logic**:
+- **Sentiment Score**: Calculated by assigning +1 to 'Positive' interactions, -1 to 'Negative', and 0 to others, then averaging.
+- **Competitive Flags**: Counts insights where the AI detected competitor mentions or market threats.
+
+---
+**Data Quality Note**: The Gold Layer is designed to be "Strict". If a record is missing a primary identifier (like `account_name` or `deal_stage`), it is excluded from these reports to ensure that dashboard visualizations remain accurate and free of "Unknown" or "Null" categories.

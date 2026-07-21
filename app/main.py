@@ -33,7 +33,7 @@ async def startup_event():
     # Create base tables if needed
     try:
         Base.metadata.create_all(bind=engine)
-        print("Database connection established")
+        print("Database connection has been established!")
     except Exception as e:
         print(f"Database connection warning: {e}")
     

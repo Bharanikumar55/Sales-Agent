@@ -31,3 +31,10 @@ Thumbs.db
 # Database
 *.db
 *.sqlite
+
+AGENTS.md
+CLAUDE.md
+
+# Agents
+AGENTS.md
+CLAUDE.md   
